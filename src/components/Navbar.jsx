@@ -33,6 +33,18 @@ export const Navbar = () => {
         setIsDarkMode(savedTheme === "dark");
     }, []);
 
+    useEffect(() => {
+        if (isMobileMenuOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "unset";
+        }
+
+        return () => {
+            document.body.style.overflow = "unset";
+        };
+    }, [isMobileMenuOpen]);
+
     const toggleTheme = () => {
         if (isDarkMode) {
             document.documentElement.classList.remove("dark");
