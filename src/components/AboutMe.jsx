@@ -16,7 +16,7 @@ export const AboutMe = () => {
                             I worked at a company called ConsigueVentas for three months, developing websites for SMEs using the WordPress CMS, along with HTML, CSS, and JavaScript. During this time, I received training to ensure the correct use of these tools and participated in real-world web development projects.
                         </p>
                         <p className="text-muted-foreground">
-                            I developed this web application using the React framework, which allowed me to build a dynamic and responsive interface. I also implemented Tailwind CSS as the styling framework to create a modern and fully responsive design. In addition, I use Angular, Vue, and Flutter for university projects and am currently working on a landing page.
+                            I developed this web application using the React framework, which allowed me to build a dynamic and responsive interface. I also implemented Tailwind CSS as the styling framework to create a modern and fully responsive design. In addition, I use Angular, Vue, and Flutter for university projects and am currently working on a landing page. I also have basic experience with cloud development using Google Cloud Platform, where I deploy and manage Ubuntu virtual machines for hosting and testing applications.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
