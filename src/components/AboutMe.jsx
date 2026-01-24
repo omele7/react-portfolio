@@ -1,5 +1,5 @@
 import { Briefcase, Code, User } from "lucide-react";
-import CV from "../lib/Diego Cabrera CV.pdf";
+import CV from "../lib/Diego_Cabrera_CV.pdf";
 
 export const AboutMe = () => {
     return (
