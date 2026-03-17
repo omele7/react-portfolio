@@ -1,4 +1,5 @@
-import { ExternalLink } from "lucide-react"
+import { useState } from "react"
+import { ExternalLink, X } from "lucide-react"
 
 const projects = [
     {
@@ -36,6 +37,8 @@ const projects = [
 ]
 
 export const ProjectsSection = () => {
+    const [selectedProject, setSelectedProject] = useState(null)
+
     return( 
         <section id="projects" className="py-24 px-4 relative">
             <div className="container mx-auto max-w-5xl">
@@ -46,8 +49,8 @@ export const ProjectsSection = () => {
             </p>
             <div className="container mx-auto max-w-5xl px-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                    {projects.map((project, key) => (
-                        <div key={key} className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover">
+                    {projects.map((project) => (
+                        <div key={project.id} className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover">
                             <div className="h-48 sm:h-56 md:h-48 overflow-hidden">
                                 <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"/>
                             </div>
@@ -62,6 +65,15 @@ export const ProjectsSection = () => {
                             
                                 <h3 className="text-lg sm:text-xl font-semibold mb-2">{project.title}</h3>
                                 <p className="text-muted-foreground text-sm mb-4 line-clamp-3">{project.description}</p>
+                                {project.description.length > 160 && (
+                                    <button
+                                        type="button"
+                                        onClick={() => setSelectedProject(project)}
+                                        className="text-sm text-primary font-medium hover:underline mb-4"
+                                    >
+                                        Read more
+                                    </button>
+                                )}
                                 <div className="flex justify-between items-center">
                                     <div className="flex space-x-3">
                                         <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-foreground/80 hover:text-primary transition-colors duration-300">
@@ -75,6 +87,52 @@ export const ProjectsSection = () => {
                     ))}
                 </div>
             </div>
+
+            {selectedProject && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+                    <button
+                        type="button"
+                        aria-label="Cerrar modal"
+                        className="absolute inset-0 bg-black/60"
+                        onClick={() => setSelectedProject(null)}
+                    />
+
+                    <div
+                        role="dialog"
+                        aria-modal="true"
+                        aria-labelledby="project-dialog-title"
+                        className="relative z-10 w-full max-w-2xl rounded-xl border border-border bg-card p-5 sm:p-6 text-left shadow-xl"
+                    >
+                        <div className="flex items-start justify-between gap-4 mb-4">
+                            <h3 id="project-dialog-title" className="text-xl sm:text-2xl font-semibold">
+                                {selectedProject.title}
+                            </h3>
+                            <button
+                                type="button"
+                                onClick={() => setSelectedProject(null)}
+                                aria-label="Cerrar"
+                                className="text-foreground/70 hover:text-primary transition-colors"
+                            >
+                                <X size={20} />
+                            </button>
+                        </div>
+
+                        <p className="text-muted-foreground leading-relaxed max-h-[60vh] overflow-y-auto pr-1">
+                            {selectedProject.description}
+                        </p>
+
+                        <div className="mt-6 flex justify-end">
+                            <button
+                                type="button"
+                                onClick={() => setSelectedProject(null)}
+                                className="px-4 py-2 rounded-md border border-border hover:bg-secondary transition-colors"
+                            >
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </section>
     )
 }
