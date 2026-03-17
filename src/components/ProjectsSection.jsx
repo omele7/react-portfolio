@@ -17,6 +17,14 @@ const projects = [
         tags: ["WordPress", "HTML", "CSS", "JavaScript"],
         link:"https://luminexstore.com/",
     },
+    {
+        id:3,
+        title:"PokeHub Project",
+        description: "Pokehub is a frontend single-page application for exploring Pokémon data through PokeAPI, featuring a complete Pokédex experience with search and filtering, detailed Pokémon views, favorites persistence, side-by-side comparison, timed quiz modes, random team generation with type weakness analysis, and top rankings, built with React 18, TypeScript, Vite, React Router DOM, Axios, Tailwind CSS and the Vite React SWC plugin.",
+        image:"/projects/project3.png",
+        tags: ["React", "HTML", "CSS", "Tailwind CSS", "Vite", "TypeScript"],
+        link:"https://poke-hub-flax.vercel.app/",
+    },
 ]
 
 export const ProjectsSection = () => {
