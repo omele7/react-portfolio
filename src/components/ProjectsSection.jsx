@@ -25,6 +25,14 @@ const projects = [
         tags: ["React", "HTML", "CSS", "Tailwind CSS", "Vite", "TypeScript"],
         link:"https://poke-hub-flax.vercel.app/",
     },
+    {
+        id:4,
+        title:"FreshMarket Project",
+        description: "FreshMarket is a standalone Angular 21 single-page ecommerce application for buying fresh products, built with TypeScript, RxJS and Angular Router/HttpClient using a feature-based architecture (Core, Features, Shared), lazy-loaded routes, route guards, JWT authentication with automatic token/header injection, global HTTP error handling with session-expiration auto-logout, reactive state management through signals and observables, a backend-synced shopping cart and checkout flow, grouped order history management, user profile and shipping address editing, custom confirm dialog and toast notification infrastructure, legal/informational pages, and fallback UX strategies such as mock product data when product service connectivity fails.",
+        image:"/projects/project4.png",
+        tags: ["Angular", "TypeScript", "HTML", "CSS", "Vitest", "RxJS"],
+        link:"https://freshmarket-frontend.vercel.app/",
+    },
 ]
 
 export const ProjectsSection = () => {
